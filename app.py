@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_file, request
+from flask import Flask, render_template, request, send_file
 
 app = Flask(__name__)
 
@@ -11,10 +11,12 @@ def download():
 
     name = request.form.get('name')
 
+    filename = f"{name}.jpeg"
+
     return send_file(
-        'Naresh.jpeg',
+        filename,
         as_attachment=True,
-        download_name=f"{name}_certificate.jpg"
+        download_name=f"{name}_certificate.jpeg"
     )
 
 if __name__ == '__main__':

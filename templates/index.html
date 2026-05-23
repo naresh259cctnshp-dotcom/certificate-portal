@@ -1,39 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Mini Marathon Participation Certificate Download</title>
 
     <style>
+
         *{
             margin:0;
             padding:0;
             box-sizing:border-box;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family:Arial, Helvetica, sans-serif;
         }
 
         body{
+
             min-height:100vh;
+
             background:
-            linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
             url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop');
+
             background-size:cover;
             background-position:center;
+
             display:flex;
             justify-content:center;
             align-items:center;
+
             padding:20px;
         }
 
         .main-box{
+
             width:100%;
             max-width:1100px;
+
             background:rgba(255,255,255,0.12);
+
             backdrop-filter:blur(6px);
+
             border-radius:20px;
+
             padding:30px;
+
             border:2px solid rgba(255,255,255,0.2);
+
             color:white;
         }
 
@@ -44,12 +61,12 @@
 
         .top h1{
             font-size:55px;
-            color:#fff;
+            color:white;
             text-shadow:2px 2px 10px black;
         }
 
         .top h2{
-            font-size:32px;
+            font-size:30px;
             color:#7CFC00;
             margin-top:10px;
             text-shadow:2px 2px 8px black;
@@ -58,70 +75,107 @@
         .top p{
             margin-top:10px;
             font-size:20px;
-            color:#f5f5f5;
         }
 
         .content{
+
             display:flex;
             gap:30px;
+
             flex-wrap:wrap;
+
             justify-content:center;
             align-items:center;
         }
 
         .left-box{
+
             flex:1;
+
             min-width:280px;
+
             background:rgba(0,0,0,0.45);
+
             padding:25px;
+
             border-radius:20px;
         }
 
         .left-box h3{
+
             font-size:28px;
+
             color:#00ff88;
+
             margin-bottom:20px;
         }
 
         .info{
+
             margin-bottom:15px;
+
             font-size:20px;
         }
 
         .download-box{
+
             flex:1;
+
             min-width:320px;
+
             background:white;
+
             padding:40px;
+
             border-radius:25px;
+
             text-align:center;
+
             color:black;
         }
 
         .download-box h2{
+
             color:#0d4f1f;
+
             margin-bottom:25px;
+
             font-size:35px;
         }
 
         input{
+
             width:100%;
+
             padding:15px;
+
             font-size:18px;
+
             border-radius:10px;
+
             border:2px solid #ccc;
+
             margin-bottom:20px;
         }
 
         button{
+
             width:100%;
+
             padding:15px;
+
             border:none;
+
             border-radius:10px;
+
             background:#0b8f32;
+
             color:white;
+
             font-size:22px;
+
             cursor:pointer;
+
             transition:0.3s;
         }
 
@@ -130,10 +184,14 @@
         }
 
         .bottom{
+
             margin-top:30px;
+
             text-align:center;
+
             font-size:20px;
-            color:#fff;
+
+            color:white;
         }
 
         @media(max-width:768px){
@@ -150,62 +208,76 @@
                 font-size:28px;
             }
         }
+
     </style>
+
 </head>
 
 <body>
 
-    <div class="main-box">
+<div class="main-box">
 
-        <div class="top">
-            <h1>Mini Marathon</h1>
-            <h2>Participation Certificate Download</h2>
-            <p>Run for Health • Run for Future</p>
-        </div>
+    <div class="top">
 
-        <div class="content">
+        <h1>Mini Marathon</h1>
 
-            <div class="left-box">
+        <h2>Participation Certificate Download</h2>
 
-                <h3>Event Details</h3>
+        <p>Run for Health • Run for Future</p>
 
-                <div class="info">📅 Date : 05 June 2026</div>
+    </div>
 
-                <div class="info">📍 Venue : Ridge Maidan, Shimla</div>
+    <div class="content">
 
-                <div class="info">🏃 Mini Marathon : 10 KM</div>
+        <div class="left-box">
 
-                <div class="info">🏃 प्रेरणा दौड़ : 3 KM</div>
+            <h3>Event Details</h3>
 
-                <div class="info">⏰ Reporting Time : 6:00 AM</div>
+            <div class="info">📅 Date : 05 June 2026</div>
 
-                <div class="info">🚩 Start Time : 6:15 AM</div>
+            <div class="info">📍 Venue : Ridge Maidan, Shimla</div>
 
-            </div>
+            <div class="info">🏃 Mini Marathon : 10 KM</div>
 
-            <div class="download-box">
+            <div class="info">🏃 प्रेरणा दौड़ : 3 KM</div>
 
-                <h2>Download Certificate</h2>
+            <div class="info">⏰ Reporting Time : 6:00 AM</div>
 
-                <form>
-
-                    <input type="text" placeholder="Enter Your Name" required>
-
-                    <button type="submit">
-                        Download Certificate
-                    </button>
-
-                </form>
-
-            </div>
+            <div class="info">🚩 Start Time : 6:15 AM</div>
 
         </div>
 
-        <div class="bottom">
-            Together Let's Build a Cleaner & Healthier Himachal 🌿
+        <div class="download-box">
+
+            <h2>Download Certificate</h2>
+
+            <form action="/download" method="POST">
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter Your Name"
+                    required
+                >
+
+                <button type="submit">
+                    Download Certificate
+                </button>
+
+            </form>
+
         </div>
 
     </div>
 
+    <div class="bottom">
+
+        Together Let's Build a Cleaner & Healthier Himachal 🌿
+
+    </div>
+
+</div>
+
 </body>
+
 </html>

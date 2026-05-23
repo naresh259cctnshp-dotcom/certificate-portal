@@ -1,5 +1,4 @@
 from flask import Flask, render_template, send_file, request
-import os
 
 app = Flask(__name__)
 
@@ -10,15 +9,13 @@ def home():
 @app.route('/download', methods=['POST'])
 def download():
 
-    name = request.form['name']
-
-    file_path = "Naresh.jpeg"
+    name = request.form.get('name')
 
     return send_file(
-        file_path,
+        'Naresh.jpeg',
         as_attachment=True,
         download_name=f"{name}_certificate.jpg"
     )
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=10000)

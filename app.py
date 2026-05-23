@@ -1,10 +1,6 @@
-
-from flask import Flask, render_template, request, send_from_directory
-import os
+from flask import Flask, render_template, request, send_file
 
 app = Flask(__name__)
-
-CERTIFICATE_FOLDER = 'certificates'
 
 @app.route('/')
 def home():
@@ -12,26 +8,12 @@ def home():
 
 @app.route('/download', methods=['POST'])
 def download():
-    name = request.form['name'].strip()
 
-    extensions = ['.pdf', '.jpg', '.jpeg', '.png']
+    name = request.form['name']
 
-    for ext in extensions:
-        filename = f"{name}{ext}"
-        file_path = os.path.join(CERTIFICATE_FOLDER, filename)
+    filename = f"{name}.jpeg"
 
-        if os.path.exists(file_path):
-            return send_from_directory(
-                CERTIFICATE_FOLDER,
-                filename,
-                as_attachment=True
-            )
-
-    return f"Certificate for '{name}' not found"
-
-@app.route('/health')
-def health():
-    return "Server Running Successfully"
+    return send_file(filename, as_attachment=True)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(debug=True)

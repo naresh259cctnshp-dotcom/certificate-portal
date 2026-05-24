@@ -1,221 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Marathon Certificate Download</title>
 
-    <title>Mini Marathon Participation Certificate Download</title>
+<style>
 
-    <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, Helvetica, sans-serif;
-        }
+body{
 
-        body{
+    background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop');
 
-            min-height:100vh;
+    background-size:cover;
+    background-position:center;
 
-            background:
-            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-            url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop');
+    min-height:100vh;
+    padding:20px;
+}
 
-            background-size:cover;
-            background-position:center;
+.main{
 
-            display:flex;
-            justify-content:center;
-            align-items:center;
+    max-width:1400px;
+    margin:auto;
 
-            padding:20px;
-        }
+    background:rgba(255,255,255,0.10);
 
-        .main-box{
+    backdrop-filter:blur(4px);
 
-            width:100%;
-            max-width:1100px;
+    border-radius:25px;
 
-            background:rgba(255,255,255,0.12);
+    overflow:hidden;
 
-            backdrop-filter:blur(6px);
+    border:2px solid rgba(255,255,255,0.2);
+}
 
-            border-radius:20px;
+.top{
 
-            padding:30px;
+    text-align:center;
 
-            border:2px solid rgba(255,255,255,0.2);
+    padding:30px 20px;
+}
 
-            color:white;
-        }
+.top h1{
 
-        .top{
-            text-align:center;
-            margin-bottom:30px;
-        }
+    font-size:80px;
+    color:#001c58;
 
-        .top h1{
-            font-size:55px;
-            color:white;
-            text-shadow:2px 2px 10px black;
-        }
+    text-shadow:3px 3px 8px rgba(0,0,0,0.4);
+}
 
-        .top h2{
-            font-size:30px;
-            color:#7CFC00;
-            margin-top:10px;
-            text-shadow:2px 2px 8px black;
-        }
+.top h2{
 
-        .top p{
-            margin-top:10px;
-            font-size:20px;
-        }
+    color:#0a6b16;
 
-        .content{
+    font-size:55px;
 
-            display:flex;
-            gap:30px;
+    margin-top:10px;
+}
 
-            flex-wrap:wrap;
+.top p{
 
-            justify-content:center;
-            align-items:center;
-        }
+    font-size:28px;
 
-        .left-box{
+    margin-top:10px;
 
-            flex:1;
+    color:white;
 
-            min-width:280px;
+    font-weight:bold;
+}
 
-            background:rgba(0,0,0,0.45);
+.middle{
 
-            padding:25px;
+    display:flex;
 
-            border-radius:20px;
-        }
+    flex-wrap:wrap;
 
-        .left-box h3{
+    justify-content:center;
 
-            font-size:28px;
+    gap:25px;
 
-            color:#00ff88;
+    padding:20px;
+}
 
-            margin-bottom:20px;
-        }
+.left-box{
 
-        .info{
+    width:340px;
 
-            margin-bottom:15px;
+    background:#001d4d;
 
-            font-size:20px;
-        }
+    color:white;
 
-        .download-box{
+    border-radius:30px;
 
-            flex:1;
+    padding:25px;
+}
 
-            min-width:320px;
+.left-box h3{
 
-            background:white;
+    font-size:40px;
 
-            padding:40px;
+    margin-bottom:25px;
 
-            border-radius:25px;
+    color:#ffde59;
+}
 
-            text-align:center;
+.info{
 
-            color:black;
-        }
+    font-size:28px;
 
-        .download-box h2{
+    margin-bottom:20px;
+}
 
-            color:#0d4f1f;
+.center-box{
 
-            margin-bottom:25px;
+    flex:1;
 
-            font-size:35px;
-        }
+    min-width:350px;
 
-        input{
+    background:white;
 
-            width:100%;
+    border-radius:30px;
 
-            padding:15px;
+    padding:50px;
 
-            font-size:18px;
+    text-align:center;
+}
 
-            border-radius:10px;
+.center-box h2{
 
-            border:2px solid #ccc;
+    font-size:50px;
 
-            margin-bottom:20px;
-        }
+    color:#083d15;
 
-        button{
+    margin-bottom:30px;
+}
 
-            width:100%;
+input{
 
-            padding:15px;
+    width:100%;
 
-            border:none;
+    padding:18px;
 
-            border-radius:10px;
+    font-size:24px;
 
-            background:#0b8f32;
+    border-radius:12px;
 
-            color:white;
+    border:2px solid #ccc;
 
-            font-size:22px;
+    margin-bottom:20px;
+}
 
-            cursor:pointer;
+button{
 
-            transition:0.3s;
-        }
+    width:100%;
 
-        button:hover{
-            background:#046322;
-        }
+    padding:18px;
 
-        .bottom{
+    font-size:28px;
 
-            margin-top:30px;
+    background:#0c9a2b;
 
-            text-align:center;
+    color:white;
 
-            font-size:20px;
+    border:none;
 
-            color:white;
-        }
+    border-radius:12px;
 
-        @media(max-width:768px){
+    cursor:pointer;
 
-            .top h1{
-                font-size:35px;
-            }
+    font-weight:bold;
+}
 
-            .top h2{
-                font-size:22px;
-            }
+button:hover{
 
-            .download-box h2{
-                font-size:28px;
-            }
-        }
+    background:#06751f;
+}
 
-    </style>
+.note{
+
+    margin-top:20px;
+
+    font-size:20px;
+
+    color:#444;
+}
+
+.right-box{
+
+    width:350px;
+
+    display:flex;
+
+    align-items:end;
+}
+
+.right-box img{
+
+    width:100%;
+
+    border-radius:20px;
+}
+
+.bottom{
+
+    background:#00153d;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    flex-wrap:wrap;
+
+    padding:25px;
+}
+
+.bottom div{
+
+    font-size:24px;
+
+    margin:10px;
+}
+
+.footer{
+
+    text-align:center;
+
+    background:#000f2b;
+
+    color:white;
+
+    padding:20px;
+
+    font-size:28px;
+}
+
+.logo{
+
+    position:absolute;
+
+    top:30px;
+
+    left:40px;
+}
+
+.logo img{
+
+    width:140px;
+}
+
+@media(max-width:900px){
+
+    .top h1{
+        font-size:45px;
+    }
+
+    .top h2{
+        font-size:30px;
+    }
+
+    .left-box,
+    .right-box{
+        width:100%;
+    }
+
+    .center-box{
+        width:100%;
+    }
+}
+
+</style>
 
 </head>
 
 <body>
 
-<div class="main-box">
+<div class="main">
+
+    <div class="logo">
+
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/55/Himachal_Pradesh_Police_Logo.png">
+
+    </div>
 
     <div class="top">
 
@@ -223,11 +301,11 @@
 
         <h2>Participation Certificate Download</h2>
 
-        <p>Run for Health • Run for Future</p>
+        <p>Run for Health, Run for Future 🌿</p>
 
     </div>
 
-    <div class="content">
+    <div class="middle">
 
         <div class="left-box">
 
@@ -235,21 +313,21 @@
 
             <div class="info">📅 Date : 05 June 2026</div>
 
-            <div class="info">📍 Venue : Ridge Maidan, Shimla</div>
+            <div class="info">📍 Ridge Maidan, Shimla</div>
 
             <div class="info">🏃 Mini Marathon : 10 KM</div>
 
             <div class="info">🏃 प्रेरणा दौड़ : 3 KM</div>
 
-            <div class="info">⏰ Reporting Time : 6:00 AM</div>
+            <div class="info">⏰ Reporting : 6:00 AM</div>
 
-            <div class="info">🚩 Start Time : 6:15 AM</div>
+            <div class="info">🚩 Start : 6:15 AM</div>
 
         </div>
 
-        <div class="download-box">
+        <div class="center-box">
 
-            <h2>Download Certificate</h2>
+            <h2>Download Your Certificate</h2>
 
             <form action="/download" method="POST">
 
@@ -261,10 +339,24 @@
                 >
 
                 <button type="submit">
+
                     Download Certificate
+
                 </button>
 
             </form>
+
+            <div class="note">
+
+                Thank you for participating ❤️
+
+            </div>
+
+        </div>
+
+        <div class="right-box">
+
+            <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=1200&auto=format&fit=crop">
 
         </div>
 
@@ -272,12 +364,23 @@
 
     <div class="bottom">
 
-        Together Let's Build a Cleaner & Healthier Himachal 🌿
+        <div>🌿 स्वच्छ पर्यावरण</div>
+
+        <div>🏃 स्वस्थ समाज</div>
+
+        <div>💪 हमारा संकल्प</div>
+
+        <div>🚭 नशे को ना</div>
+
+    </div>
+
+    <div class="footer">
+
+        Let's Run Together for a Better Tomorrow 🌱
 
     </div>
 
 </div>
 
 </body>
-
 </html>

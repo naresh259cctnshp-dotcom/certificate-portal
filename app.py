@@ -11,7 +11,7 @@ def download():
 
     name = request.form.get('name')
 
-    filename = f"{name}.jpeg"
+    filename = f"certificates/{name}.jpeg"
 
     return send_file(
         filename,

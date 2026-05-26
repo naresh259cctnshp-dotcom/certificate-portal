@@ -12,7 +12,7 @@ def home():
 @app.route('/download', methods=['POST'])
 def download():
 
-    name = request.form['name']
+    name = request.form['name'].upper()
 
     possible_files = [
         f"{name}.jpg",

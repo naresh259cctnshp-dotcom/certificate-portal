@@ -17,7 +17,8 @@ def download():
     possible_files = [
         f"{name}.jpg",
         f"{name}.jpeg",
-        f"{name}.png"
+        f"{name}.png",
+        f"{name}.pdf"
     ]
 
     for filename in possible_files:
@@ -32,7 +33,10 @@ def download():
                 as_attachment=True
             )
 
-    return f"Certificate not found for {name}"
+    return render_template(
+        'index.html',
+        error="Enter Correct Registration Number"
+    )
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -301,7 +301,16 @@ button:hover{
 
             <h2>Download Certificate</h2>
 
-            <form action="/download" method="POST">
+     {% if error %}
+
+<p style="color:red; font-size:20px; font-weight:bold; margin-bottom:15px;">
+
+{{ error }}
+
+</p>
+
+{% endif %}       
+<form action="/download" method="POST">
 
                 <input
                     type="text"

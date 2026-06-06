@@ -9,10 +9,18 @@ CERTIFICATE_FOLDER = "certificates"
 def home():
     return render_template('index.html')
 
+# DEBUG ROUTE
+@app.route('/files')
+def files():
+    try:
+        return "<br>".join(os.listdir(CERTIFICATE_FOLDER))
+    except Exception as e:
+        return str(e)
+
 @app.route('/download', methods=['POST'])
 def download():
 
-    name = request.form['name'].upper()
+    name = request.form['name'].strip().upper()
 
     possible_files = [
         f"{name}.jpg",
@@ -25,13 +33,20 @@ def download():
 
         file_path = os.path.join(CERTIFICATE_FOLDER, filename)
 
+        print("Checking:", file_path)
+        print("Exists:", os.path.exists(file_path))
+
         if os.path.exists(file_path):
+
+            print("FOUND:", filename)
 
             return send_from_directory(
                 CERTIFICATE_FOLDER,
                 filename,
                 as_attachment=True
             )
+
+    print("NOT FOUND:", name)
 
     return render_template(
         'index.html',
